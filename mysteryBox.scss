@@ -1,0 +1,958 @@
+.wrapper {
+  position: relative;
+  .mainHeader {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+  }
+  p {
+    margin: 0px;
+    font-family: "Karantina";
+  }
+}
+
+.loaderContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #ff1840 transparent #ff1840 transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.crateDescription {
+  background-image: url("../../assets/MysteryBox/crateFrame.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  // top: -5vw;
+  bottom: 25vw;
+  right: -65%;
+  padding: 30px 20px;
+  width: 50%;
+  font-size: 1vw;
+  font-family: "Inter";
+  color: white;
+}
+
+@media (max-width: 1700px) {
+  .crateModalContainer {
+    width: 40% !important
+  }
+}
+
+@media (max-width: 1300px) {
+  .crateModalContainer {
+    width: 60% !important
+  }
+}
+
+@media (max-width: 1000px) {
+  .crateModalContainer {
+    width: 80% !important
+  }
+}
+
+@media (max-width: 700px) {
+  .crateModalContainer {
+    width: 100% !important
+  }
+  .prizeCardGrid{
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .buyCrateStats {
+    p {
+      font-size: 10px !important;
+    }
+  }
+
+  .crateModalContainer {
+    width: 100% !important
+  }
+}
+
+.crateModalContainer {
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+  outline: none;
+
+  .crateImg {
+    width: 100%;
+  }
+
+  .openedCrateImg {
+    width: 100%;
+  }
+
+  .crateButton {
+    background-image: url("../../assets/MysteryBox/crateModalBtn.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 100%;
+    height: 13%;
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    p {
+      font-family: "Inter";
+      margin: 0px;
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(180deg, #ebc680 0%, #866429 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    .loader_1 {
+      border: 0.5em dotted currentcolor;
+      border-radius: 50%;
+      animation: 1s loader-01 linear infinite;
+    }
+
+    .button {
+      width: 10px;
+      font-size: 100px;
+    }
+    .box {
+      height: 10px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    @keyframes loader-01 {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+.buyCrateBtnsCont {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  .crateBtns {
+    width: 100%;
+  }
+
+  .boxesTokensCount {
+    width: 85%;
+    display: flex;
+    position: absolute;
+    top: 38%;
+    left: 12%;
+    z-index: 1;
+    p {
+      margin: 0px;
+      color: white;
+      font-family: "Itim";
+      width: 50%;
+      text-align: left;
+    }
+  }
+}
+
+.buyCrateStats {
+  display: flex;
+  position: absolute;
+  bottom: 16%;
+  font-family: "Itim";
+  width: 70%;
+  justify-content: center;
+  gap: 20%;
+  p {
+    margin: 0px;
+    color: white;
+    font-size: 16px;
+  }
+}
+
+.buyCrateBuyBtns {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  bottom: 6%;
+  height: 8%;
+  gap: 1%;
+  div {
+    // background: #866429;
+    cursor: pointer;
+  }
+  .controls {
+    width: 5%;
+  }
+  .buy {
+    width: 20%;
+  }
+}
+
+.bgCont {
+  display: flex;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  .bgImg {
+    width: 100%;
+  }
+  .crateBtnsCont {
+    display: flex;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    .crateBtns {
+      width: 100%;
+    }
+  }
+
+  .crateHover {
+    background-image: url("https://res.cloudinary.com/foxledgerstudio/image/upload/c_fill,g_xy_center,q_auto:best,w_500/v1667763114/chest_no_aura.webp");
+    background-size: cover;
+    // background: #e36464;
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    top: 33%;
+    left: 35%;
+    z-index: 2;
+    cursor: pointer;
+    &:hover {
+      background-image: url("https://res.cloudinary.com/foxledgerstudio/image/upload/c_fill,g_xy_center,q_auto:best,w_500/v1667763115/chest_with_aura.webp");
+      background-size: cover;
+    }
+  }
+  .keyHover {
+    background-image: url("../../assets/MysteryBox/key.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: rotate(-8deg);
+    width: 27%;
+    height: 18%;
+    top: 60%;
+    left: 9%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bgText {
+    position: absolute;
+    right: 10%;
+    top: 60%;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    cursor: pointer;
+    transform: rotate(10deg);
+
+    p {
+      font-size: 28px;
+      font-weight: 400;
+      color: white;
+    }
+
+    .downArrow {
+      font-size: 80px;
+      margin-left: 60px;
+    }
+  }
+}
+
+.prizePool {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 50px;
+  background: black;
+  background-image: url("../../assets/MysteryBox/prizePoolBg.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .heading {
+    font-size: 76px;
+    font-weight: 400;
+    color: white;
+  }
+
+  .prizePoolComponentsCont {
+    display: flex;
+    gap: 40px;
+
+    .prizePoolComponents {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+      }
+
+      p {
+        font-size: 24px;
+        font-weight: 100;
+        color: white;
+        font-family: "Lato";
+      }
+    }
+  }
+}
+
+.prizesWrapper {
+  background-image: url("../../assets/Layout/background-5.svg");
+  background-color: rgba($color: #ef7d7a, $alpha: 1);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.prizesInfo {
+  display: flex;
+  padding: 15px 24px;
+  gap: 20px;
+
+  .liveFeed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    gap: 30px;
+    background: linear-gradient(
+      180deg,
+      rgba(108, 12, 12, 0.9) 0%,
+      rgba(70, 4, 4, 0.9) 100%
+    );
+    border-radius: 20px;
+    padding: 40px 20px;
+    p {
+      font-family: "Inter" !important;
+      font-weight: 200;
+    }
+
+    .heading {
+      font-size: 32px;
+      color: white;
+      font-weight: 700;
+    }
+
+    .liveFeedComponent {
+      display: flex;
+      padding: 15px;
+      background: #490f12cc;
+      border-radius: 15px;
+      width: 100%;
+      justify-content: space-between;
+
+      .label {
+        color: white;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+
+      .time {
+        color: #e36464;
+        font-size: 11px;
+      }
+
+      .prize {
+        margin-top: auto;
+        font-size: 15px;
+        color: #e36464;
+      }
+    }
+  }
+
+  .prizesCont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .header {
+      // background-color: #8a2121e5;
+      background: linear-gradient(
+        180deg,
+        rgba(108, 12, 12, 0.9) 0%,
+        rgba(70, 4, 4, 0.9) 100%
+      );
+      border-radius: 20px;
+      padding: 10px 20px;
+      gap: 40px;
+      display: flex;
+      align-items: center;
+
+      .filters {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .prizeSearch {
+        // background: rgba(31, 6, 50, 0.8);
+        background: #490f12cc;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 10px 18px;
+        width: 250px;
+        font-size: 16px;
+      }
+      .selector {
+        padding: 5px 10px;
+        background: transparent;
+        // border: 2px solid #834ad3;
+        border: 2px solid rgba(227, 100, 100, 0.6);
+        border-radius: 10px;
+        color: white;
+        outline: none;
+        font-family: "Itim";
+        font-size: 15px;
+        cursor: pointer;
+
+        fieldset {
+          background: transparent;
+        }
+
+        option {
+          padding: 5px !important;
+          background: transparent !important;
+          color: black;
+          cursor: pointer;
+        }
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: rgba(227, 100, 100, 0.6);
+        font-size: 18px;
+        font-family: "Itim";
+      }
+    }
+
+    .prizeCardsCont {
+      width: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(108, 12, 12, 0.9) 0%,
+        rgba(70, 4, 4, 0.9) 100%
+      );
+      border-radius: 20px;
+      padding: 30px 15px;
+      height: 500px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .prizeCardGrid{
+      display: grid;
+      vertical-align: top;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      row-gap: 20px;
+    }
+  }
+}
+
+.filterIconCont {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  p {
+    color: white;
+    font-size: 18px;
+    font-family: "Itim";
+  }
+}
+
+.box {
+  display: flex;
+  height: 80px;
+  border-radius: 3px;
+  font-size: 10px;
+  padding: 1em;
+  position: relative;
+  margin: auto;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  background: transparent;
+  margin: auto;
+  width: 80px;
+  border: none;
+  color: white;
+  // padding: .5em 1em;
+  border-radius: 5px;
+  font-size: 50px;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 80px;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  // color: white;
+  // background-color: white;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    animation: 1s spin linear infinite;
+  }
+  &:before {
+    transform: rotateX(70deg);
+  }
+  &:after {
+    transform: rotateY(70deg);
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+
+@media (max-width: 420px) {
+  .bgCont {
+    height: 100vh;
+    .crateBtnsCont {
+      width: 80%;
+      left: 10%;
+      top: 15%;
+    }
+    .bgText {
+      top: 38% !important;
+      right: 6% !important;
+    }
+    .crateHover {
+      width: 40%;
+      height: 20%;
+      top: 65vh;
+      left: 50vw;
+      background-image: none;
+    }
+    .keyHover {
+      top: 60vh;
+      width: 35%;
+      height: 10%;
+      background-image: none;
+    }
+
+    .crateKey {
+      width: 100%;
+      height: 70px;
+      object-fit: contain;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: 70vh;
+      cursor: pointer;
+      animation: shake 5s;
+      animation-iteration-count: infinite;
+
+      @keyframes shake {
+        0% {
+          transform: translate(1px, 1px) rotate(0deg);
+        }
+        10% {
+          transform: translate(-1px, -2px) rotate(-1deg);
+        }
+        20% {
+          transform: translate(-3px, 0px) rotate(1deg);
+        }
+        30% {
+          transform: translate(3px, 2px) rotate(0deg);
+        }
+        40% {
+          transform: translate(1px, -1px) rotate(1deg);
+        }
+        50% {
+          transform: translate(-1px, 2px) rotate(-1deg);
+        }
+        60% {
+          transform: translate(-3px, 1px) rotate(0deg);
+        }
+        70% {
+          transform: translate(3px, 1px) rotate(-1deg);
+        }
+        80% {
+          transform: translate(-1px, -1px) rotate(1deg);
+        }
+        90% {
+          transform: translate(1px, 2px) rotate(0deg);
+        }
+        100% {
+          transform: translate(1px, -2px) rotate(-1deg);
+        }
+      }
+    }
+  }
+
+  .buyCrateBtnsCont {
+    .boxesTokensCount {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .buyCrateStats {
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .crateModalContainer {
+    width: 100%;
+
+    .crateButton {
+      width: 150px;
+      bottom: 10px;
+    }
+  }
+
+  .prizePool {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    padding: 50px 30px;
+    background-image: none;
+
+    .heading {
+      font-size: 58px;
+    }
+
+    .prizePoolComponentsCont {
+      flex-direction: column;
+      gap: 10px;
+      .prizePoolComponents {
+        gap: 20px;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
+
+  .prizesInfo {
+    padding: 15px 20px;
+    flex-direction: column;
+
+    .prizesCont {
+      gap: 10px;
+
+      .prizeCardGrid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+    }
+  }
+  .loader {
+    left: 35%;
+  }
+}
+
+@media (max-width: 700px) {
+  .bgCont {
+    .bgText {
+      right: 6%;
+      top: 60%;
+
+      p {
+        width: 80px;
+        font-size: 15px !important;
+      }
+
+      .downArrow {
+        margin-left: 20px !important;
+        margin-top: -10px;
+        font-size: 28px !important;
+      }
+    }
+  }
+
+  .prizePool {
+    background-image: none;
+    .heading {
+      font-size: 38px;
+    }
+    .prizePoolComponentsCont {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .crateDescription {
+    bottom: -120px;
+    font-size: 10px;
+    left: 0px;
+    width: 100%;
+  }
+
+  .prizesInfo {
+    flex-direction: column;
+    .liveFeed {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 1440px) {
+  .bgCont {
+    .bgText {
+      right: 9%;
+      top: 58%;
+
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+  .prizesInfo {
+    padding: 10px 20px !important;
+  }
+
+  .header {
+    gap: 10px !important;
+
+    .prizeSearch {
+      width: 200px !important;
+    }
+
+    label {
+      gap: 2px !important;
+      font-size: 14px !important;
+    }
+  }
+  .prizeCardGrid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+
+  .prizePool {
+    display: flex;
+    // flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+
+    .heading {
+      font-size: 50px;
+    }
+
+    .prizePoolComponentsCont {
+      gap: 10px;
+      .prizePoolComponents {
+        gap: 20px;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .bgCont {
+    .bgText {
+      right: 10%;
+      top: 55%;
+      width: 100px;
+      gap: 20px;
+      cursor: pointer;
+
+      p {
+        font-size: 22px;
+        font-weight: 400;
+        color: white;
+      }
+
+      .downArrow {
+        font-size: 50px;
+        margin-left: 40px;
+      }
+    }
+  }
+  .prizePool {
+    gap: 20px;
+    .heading {
+      font-size: 45px;
+    }
+    .prizePoolComponentsCont {
+      gap: 20px;
+      .prizePoolComponents {
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .prizesInfo {
+    .prizesCont {
+      .header {
+        flex-direction: column;
+        padding: 12px 20px;
+        .prizeSearch {
+          width: 100% !important;
+        }
+        .filters {
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .bgCont {
+    .bgText {
+      top: 55%;
+      width: 10%;
+      p {
+        font-size: 2vw;
+      }
+    }
+  }
+  .buyCrateBtnsCont {
+    .boxesTokensCount {
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .buyCrateStats {
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .prizePool {
+    display: flex;
+    gap: 20px;
+    padding: 50px;
+
+    .heading {
+      font-size: 60px;
+    }
+
+    .prizePoolComponentsCont {
+      gap: 20px;
+      .prizePoolComponents {
+        gap: 30px;
+        img {
+          width: 80px;
+          height: 80px;
+        }
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+nav > ul > li > button {
+  color: white !important
+}
+@media (max-width: 700px) {
+  .crateModalContainer {
+    width: 100% !important
+  }
+  .prizeCardGrid{
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
